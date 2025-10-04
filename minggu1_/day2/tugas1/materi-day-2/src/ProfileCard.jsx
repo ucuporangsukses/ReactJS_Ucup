@@ -1,4 +1,5 @@
-function ProfileCard({ name, photo, bio, skills }) {
+function ProfileCard(props) {
+  const {photo, name, bio, skills}= props
   return (
     <div
       style={{

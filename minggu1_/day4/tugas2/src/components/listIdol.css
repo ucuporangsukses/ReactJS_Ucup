@@ -1,0 +1,15 @@
+.container {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    box-shadow: black 2px 2px 2px;
+    border: 2px grey solid;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.box {
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+
+}

@@ -5,7 +5,7 @@ function ProductCard({ productName, price, stock, isAvailable }) {
   return (
     <div
       style={{
-        border: "1px solid #0e0e0eff",
+        border: "1px solid  #0e0e0eff",
         borderRadius: "8px",
         padding: "15px",
         width: "200px",
