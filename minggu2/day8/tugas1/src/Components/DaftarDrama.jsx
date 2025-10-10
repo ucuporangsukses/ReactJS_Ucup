@@ -1,49 +1,21 @@
 import React, { useState } from "react";
 
+// 🔥 Import poster dari folder src/assets
+import Bloodhounds from "minggu2/day8/tugas1/src/assets/Bloodhounds.jpg";
+import MyDemon from "./assets/My_Demon.jpg";
+import QueenOfTears from "./assets/Queen_of_Tears.jpg";
+import TwentyFiveTwentyOne from "./assets/Twenty_Five_Twenty_One.jpg";
+import TheWorstOfEvil from "./assets/The_Worst_of_Evil.jpg";
+import Vigilante from "./assets/Vigilante.jpg";
+
 export default function DaftarDrama() {
   const [dramaList, setDramaList] = useState([
-    {
-      id: 1,
-      judul: "The Worst of Evil",
-      tahun: 2023,
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BZTdmZjM2ZjctZGUyYi00NWI1LTg2NjItM2E3OTlkZmM0YmY5XkEyXkFqcGc@._V1_.jpg",
-    },
-    {
-      id: 2,
-      judul: "Queen of Tears",
-      tahun: 2024,
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BNDQ1NzUwMGMtYzc4Zi00YmM3LWEzMzYtYzM0YTg4YjllNzQ4XkEyXkFqcGc@._V1_.jpg",
-    },
-    {
-      id: 3,
-      judul: "Twenty-Five Twenty-One",
-      tahun: 2022,
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BMDU1ZTZlNDEtOTBlMC00NTM5LTg4ZjUtNDc0ZjQxZDE2ZGM5XkEyXkFqcGc@._V1_.jpg",
-    },
-    {
-      id: 4,
-      judul: "Bloodhounds",
-      tahun: 2023,
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BZDk3OWQ3NmUtNzJiMC00MmY5LWEzMGMtYjllZDIxM2Q3ZjViXkEyXkFqcGc@._V1_.jpg",
-    },
-    {
-      id: 5,
-      judul: "My Demon",
-      tahun: 2023,
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BNjYxYzM4ZTctZTdlZS00MmEwLWI3MGMtZGVhYjFlNjA4YzQ3XkEyXkFqcGc@._V1_.jpg",
-    },
-    {
-      id: 6,
-      judul: "Vigilante",
-      tahun: 2023,
-      poster:
-        "https://m.media-amazon.com/images/M/MV5BYjFiNDNmOGUtNDhmMi00YzQxLWE5NTktZjQ0M2JkYmE3YmMyXkEyXkFqcGc@._V1_.jpg",
-    },
+    { id: 1, judul: "The Worst of Evil", tahun: 2023, poster: TheWorstOfEvil },
+    { id: 2, judul: "Queen of Tears", tahun: 2024, poster: QueenOfTears },
+    { id: 3, judul: "Twenty-Five Twenty-One", tahun: 2022, poster: TwentyFiveTwentyOne },
+    { id: 4, judul: "Bloodhounds", tahun: 2023, poster: Bloodhounds },
+    { id: 5, judul: "My Demon", tahun: 2023, poster: MyDemon },
+    { id: 6, judul: "Vigilante", tahun: 2023, poster: Vigilante },
   ]);
 
   const hapusSemua = () => {
@@ -84,6 +56,7 @@ export default function DaftarDrama() {
                 backgroundColor: "white",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
                 padding: "10px",
+                transition: "transform 0.2s",
               }}
             >
               <img
@@ -94,7 +67,10 @@ export default function DaftarDrama() {
                   height: "280px",
                   objectFit: "cover",
                   borderRadius: "8px",
+                  transition: "transform 0.3s ease",
                 }}
+                onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+                onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
               />
               <h3 style={{ margin: "10px 0 5px" }}>{drama.judul}</h3>
               <p style={{ color: "#777", fontSize: "14px" }}>{drama.tahun}</p>
@@ -114,6 +90,7 @@ export default function DaftarDrama() {
           color: "white",
           cursor: "pointer",
           fontWeight: "bold",
+          transition: "all 0.2s",
         }}
       >
         Hapus Semua Drama
