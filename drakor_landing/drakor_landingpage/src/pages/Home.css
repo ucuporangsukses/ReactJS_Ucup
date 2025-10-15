@@ -1,0 +1,96 @@
+/* ======= Global Home Styles ======= */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #111; /* hitam gelap */
+  color: white;
+}
+
+/* Judul utama */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e50914; /* merah Netflix */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Search bar */
+input[type="text"] {
+  background-color: #eee; /* putih terang */
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto 2rem auto;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px #e50914;
+}
+
+/* Container film grid */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem; /* jarak antar card */
+}
+
+/* MovieCard wrapper */
+.movie-card {
+  width: 180px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #222; /* abu gelap */
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.7);
+}
+
+/* Poster */
+.movie-card img {
+  width: 100%;
+  display: block;
+  border-bottom: 2px solid #e50914;
+}
+
+/* Judul film */
+.movie-card h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px 4px;
+  color: #fff;
+}
+
+/* Rating bintang */
+.movie-card .rating {
+  text-align: center;
+  padding-bottom: 8px;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .movie-card {
+    width: 45%; /* 2 per baris di HP */
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-card {
+    width: 100%; /* 1 per baris di HP sangat kecil */
+  }
+}

@@ -1,0 +1,123 @@
+.movie-detail-bg {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.82); backdrop-filter: blur(6px);
+  display:flex; align-items:center; justify-content:center; z-index:999;
+}
+.movie-detail {
+  width: 90%; max-width: 1000px; background: #0f0f0f; border-radius: 10px; padding: 20px; color: #fff;
+  max-height: 90vh; overflow-y: auto;
+}
+.back-btn { background: transparent; color: #fff; border: none; font-size: 18px; cursor: pointer; margin-bottom: 10px; }
+.movie-header { display:flex; gap: 18px; margin-bottom: 12px; }
+.detail-poster { width: 260px; border-radius: 8px; object-fit: cover; }
+.info h1 { margin-bottom:6px; }
+.genre { color: #ccc; margin-bottom: 8px; }
+.rating { color: #ffd86b; margin-bottom: 8px; }
+.plot { color: #ddd; margin-bottom: 8px; line-height: 1.4; }
+
+.trailer-wrap { margin: 12px 0; }
+.detail-trailer { width: 100%; height: 420px; border-radius: 8px; }
+
+.comments { margin-top: 14px; }
+.comment-input { display:flex; gap: 8px; margin-top: 8px; }
+.comment-input input { flex:1; padding: 8px 10px; border-radius: 6px; border: none; }
+.comment-input button { padding: 8px 12px; background: #e50914; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+
+/* responsive */
+@media (max-width: 768px) {
+  .movie-header { flex-direction: column; align-items:flex-start; }
+  .detail-poster { width: 100%; max-width: 320px; }
+  .detail-trailer { height: 260px; }
+}
+.movie-detail-bg {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  min-height: 100vh;
+  padding: 40px;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.movie-detail {
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* efek blur backdrop + fade */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+.movie-detail {
+  color: white;
+  background: #111;
+  padding: 20px;
+  min-height: 100vh;
+  animation: fadeIn 0.5s;
+}
+.fade-in { animation: fadeIn 0.5s; }
+@keyframes fadeIn { from {opacity:0} to {opacity:1} }
+
+.back-btn {
+  background: #e50914;
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.movie-detail-content h1 { color: #e50914; margin-bottom: 5px; }
+.rating { color: #f5c518; font-weight: bold; margin-bottom: 5px; }
+.genre, .plot { margin-bottom: 10px; }
+
+.episodes button {
+  margin: 3px;
+  background: #222;
+  border: 1px solid #e50914;
+  color: white;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.episodes button.active { background: #e50914; }
+
+.recommendations {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin: 15px 0;
+}
+.recommendations::-webkit-scrollbar { height: 6px; }
+.recommendations::-webkit-scrollbar-thumb { background: #e50914; border-radius: 3px; }
+
+.comments { margin-top: 20px; }
+.comments p { margin-bottom: 5px; }
+.add-comment {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.add-comment input {
+  flex: 1;
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+}
+.add-comment button {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import { themeReducer } from "../reducers/themeReducer";
+import { themeReducer } from "../reducers/ThemeReducer";
 
 const ThemeContext = createContext();
 

@@ -1,0 +1,20 @@
+{
+  "name": "react_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ucuporangsukses/ReactJS_Ucup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ucuporangsukses/ReactJS_Ucup/issues"
+  },
+  "homepage": "https://github.com/ucuporangsukses/ReactJS_Ucup#readme"
+}

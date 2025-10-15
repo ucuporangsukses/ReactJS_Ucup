@@ -1,0 +1,144 @@
+.movie-card {
+  width: 220px;
+  height: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: linear-gradient(145deg, #0f0f0f, #191919);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.movie-card:hover {
+  transform: scale(1.08);
+  z-index: 4;
+  box-shadow: 0 18px 40px rgba(229, 9, 20, 0.22);
+}
+
+/* --- Trailer Overlay --- */
+.trailer-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  opacity: 0;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease-in-out;
+  pointer-events: none; /* biar tetep bisa diklik ke halaman detail */
+  z-index: 3;
+}
+
+/* muncul smooth pas hover */
+.movie-card:hover .trailer-preview {
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+
+.trailer-preview iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Poster */
+.movie-poster,
+.movie-trailer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+  border: none;
+}
+
+/* Overlay info bawah */
+.movie-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9));
+  transform: translateY(18px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.movie-card:hover .movie-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.movie-overlay h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+.movie-genre {
+  font-size: 0.8rem;
+  color: #ddd;
+  margin-bottom: 6px;
+}
+.movie-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #ffd86b;
+}
+.rating {
+  color: #ffd86b;
+  font-weight: 700;
+}
+.episodes {
+  color: #ccc;
+  font-weight: 500;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .movie-card {
+    width: 180px;
+    height: 260px;
+  }
+}
+@media (max-width: 768px) {
+  .movie-card {
+    width: 150px;
+    height: 220px;
+  }
+  .movie-overlay h3 {
+    font-size: 0.88rem;
+  }
+}
+@media (max-width: 480px) {
+  .movie-card {
+    width: 130px;
+    height: 200px;
+  }
+  .movie-overlay {
+    display: none;
+  }
+  .hidden-mobile {
+    display: none;
+  }
+}
+.movie-card {
+  width: 220px;
+  height: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: linear-gradient(145deg, #0f0f0f, #191919);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  margin: 12px; /* ✅ jarak antar film biar rapi */
+}
+

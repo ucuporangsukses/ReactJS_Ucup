@@ -1,33 +1,52 @@
-import dramas from "../data/drama";
-import DramaCard from "../components/DramaCard";
 import { useState } from "react";
+import { movies } from "../data/movie";
+import HeroBanner from "../components/HeroBanner";
+import MovieRow from "../components/MovieRow";
+import MovieDetail from "../components/MovieDetail";
+import "./Home.css";
 
 export default function Home() {
   const [search, setSearch] = useState("");
+  const [selected, setSelected] = useState(null);
 
-  const filtered = dramas.filter((d) =>
-    d.title.toLowerCase().includes(search.toLowerCase())
+  const filtered = movies.filter((m) =>
+    m.title.toLowerCase().includes(search.toLowerCase())
   );
 
+  if (selected)
+    return (
+      <MovieDetail
+        movie={{
+          ...selected,
+          recommendations: movies.filter((m) => m.id !== selected.id).slice(0, 4),
+        }}
+        goBack={() => setSelected(null)}
+        onSelectMovie={setSelected}
+      />
+    );
+
   return (
-    <div className="min-h-screen bg-black text-white px-10 py-10">
-      <h1 className="text-4xl font-bold mb-8 text-red-500 text-center">
-        🎬 Korean Drama Collection
-      </h1>
+    <div className="home-page">
+      <HeroBanner movie={movies[0]} />
 
       <input
         type="text"
-        placeholder="Search drama..."
-        className="w-full md:w-1/2 mx-auto block p-3 rounded-lg text-black mb-8"
+        placeholder="Search drama or movie..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        className="search-bar"
       />
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        {filtered.map((drama) => (
-          <DramaCard key={drama.id} drama={drama} />
-        ))}
-      </div>
+      <MovieRow
+        title="K-Drama Collection"
+        movies={filtered.filter((m, i) => i < 30)}
+        onCardClick={setSelected}
+      />
+      <MovieRow
+        title="Western Hits"
+        movies={filtered.filter((m, i) => i >= 30)}
+        onCardClick={setSelected}
+      />
     </div>
   );
 }

@@ -1,3 +1,133 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* reset + global */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body,#root { height: 100%; }
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: auto;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { height: 8px; width: 8px; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255,0,0,0.35);
+  border-radius: 10px;
+}
+
+/* utility */
+.container { max-width: 1300px; margin: 0 auto; }
+.hidden-mobile { display: block; }
+@media (max-width: 480px) { .hidden-mobile { display: none; } }
+
+.episodes-list {
+  margin: 20px 0;
+}
+
+.episodes-title {
+  font-size: 1.2rem;
+  color: #ff4444;
+  margin-bottom: 10px;
+}
+
+.episodes-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.episode-btn {
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid #ff4444;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.episode-btn:hover {
+  background-color: #ff4444;
+}
+
+.episode-btn.active {
+  background-color: #ff0000;
+  font-weight: bold;
+}
+.movie-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+/* 🔥 Poster Full ke kiri & lebar maksimal */
+.detail-poster.full-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 0; /* biar full edge ke edge */
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* 🧾 Info teks-nya kasih jarak dari gambar biar enak dibaca */
+.info {
+  padding: 20px 10px;
+}
+
+.genre, .rating, .plot {
+  margin-bottom: 6px;
+}
+.detail-poster.full-img {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.03); }
+  to { opacity: 1; transform: scale(1); }
+}
+.movie-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 12px;
+  scroll-behavior: smooth;
+}
+
+.movie-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movie-row::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 10px;
+}
+.movie-row::-webkit-scrollbar-track {
+  background: #141414;
+}
+.movie-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+.movie-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movie-row::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 10px;
+}
+
+.movie-row::-webkit-scrollbar-track {
+  background: #141414;
+}
