@@ -14,7 +14,8 @@ import CardWithText from "./components/CardWithText";
 
 function App() {
   return (
-    <ThemeProvider>
+    <div>
+      <ThemeProvider>
       <UserProvider>
         <LanguageProvider>
           <NotificationProvider>
@@ -49,6 +50,7 @@ function App() {
         </LanguageProvider>
       </UserProvider>
     </ThemeProvider>
+    </div>
   );
 }
 
