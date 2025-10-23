@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/ucuporangsukses/ReactJS_Ucup/issues"
   },
-  "homepage": "https://github.com/ucuporangsukses/ReactJS_Ucup#readme"
+  "homepage": "https://github.com/ucuporangsukses/ReactJS_Ucup#readme",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.15",
+    "react-router-dom": "^7.9.4",
+    "tailwindcss": "^4.1.15"
+  }
 }
